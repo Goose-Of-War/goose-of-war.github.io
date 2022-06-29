@@ -6,4 +6,4 @@ Hello. This is Goose, working on the a portfolio website. Huge shoutout to [Ashw
 
 For the first commit, I know it looks rather bleak, but until then, please be patient.
 
-Honk.
+:swan: Honk.
