@@ -51,6 +51,26 @@ hr
 	margin: 10px;
 }
 
+h2
+{
+	margin: 7px 0px;
+	text-decoration: underline;
+}
+
+li
+{
+	margin: 2px 2px;
+}
+
+code
+{
+	font-family: 'Consolas', monospace;
+	font-size: 90%;
+	color: #222222;
+	background-color: #77777788;
+}
+
+
 .sitename-span
 {
 	margin-top: 0%;
@@ -65,7 +85,7 @@ hr
 
 .page-title
 {
-	background-color: #cccccc;
+	background-color: #ccccccdf;
 
 	width: 80%;
 	margin-left: auto;
