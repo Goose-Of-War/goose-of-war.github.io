@@ -1,0 +1,63 @@
+.languages-list
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 45%;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: #202020;
+	padding-top: 4px;
+	color: #dddddd;
+	font-family: 'Consolas',monospace;
+	font-size: large;
+}
+
+.languages-list-heading
+{
+	border-bottom: 2px solid grey ;
+	color: #dddddd;
+	padding-left: 10px;
+	padding-bottom: 4px;
+}
+
+.language-card
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin: 5px 10px;
+	border: 1px dotted white
+}
+
+.language-card-image
+{
+	width: 15%;
+	height: 15%;
+}
+
+.language-card-text
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 10px;
+	padding-right: 5px;
+}
+
+.language-card-heading
+{
+	color: #03b203;
+	margin-left: 0px;
+	padding-bottom: 4px;
+	font-weight: bold;
+}
+
+.language-card-body
+{
+	color: #03dc03;
+	padding-bottom: 4px;
+	font-size: medium;
+	font-weight: lighter;
+	text-align: justify;
+}
+

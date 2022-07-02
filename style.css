@@ -7,14 +7,9 @@ body
 
 div
 {
-	margin-top: 20px;
-	margin-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	width: 80%;
 	text-align: center;
-	padding-top: 40px;
-	padding-bottom: 40px;
 }
 
 header
@@ -43,12 +38,11 @@ main
 	margin-left: auto;
 	margin-right: auto;
 	padding: 10px 20px;
-	
 }
 
 hr
 {
-	margin: 10px;
+	margin: 4px 0px;
 }
 
 h2
@@ -75,18 +69,21 @@ code
 {
 	margin-top: 0%;
 	margin-bottom: 0%;
+	width: 80%;
 	font-family: sans-serif;
 	color: deepskyblue;
 	margin-left: 20px;
 	text-align: left;
 	padding-top: 0px;
 	padding-bottom: 0px;
+	
 }
 
 .page-title
 {
 	background-color: #ccccccdf;
-
+	margin-top: 20px;
+	margin-bottom: 10px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -104,9 +101,87 @@ code
 
 .roleplay-momint
 {
+	margin-top: 20px;
+	margin-bottom: 10px;
 	width: 65%;
 	background-color: #ddddae;
 	padding-top: 40px;
 	padding-bottom: 40px;
 	font-family: serif;
 }
+
+.languages-list
+{
+	margin-left: 1%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 75%;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: #202020;
+	padding: 4px 8px;
+	color: #dddddd;
+	font-size: large;
+	text-align: justify;
+}
+
+.languages-list-heading
+{
+	color: #dddddd;
+	padding-left: 10px;
+	margin-top: 2px;
+	padding-bottom: 4px;
+	text-align: left;
+	margin-left: 15px;
+	font-family: 'Times New Roman', serif;
+}
+
+.language-card
+{
+	padding-top: 4px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	padding-bottom: 4px;
+}
+
+.language-card-image
+{
+	width: 10%;
+	margin-left: 10px;
+	padding-right: 5px;
+}
+
+.language-card-text
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 90%;
+	margin-left: 10px;
+	padding-right: 5px;
+	padding-top: 0px;
+}
+
+.language-card-heading
+{
+	color: #03b203;
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-bottom: 4px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-align: left;
+}
+
+.language-card-body
+{
+	color: #cccccc;
+	padding-bottom: 4px;
+	font-size: medium;
+	text-align: justify;
+	padding-left: 25px;
+	font-family: 'Calibri', 'Arial', sans-serif;
+}
+
