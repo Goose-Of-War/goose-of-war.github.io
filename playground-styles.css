@@ -1,63 +1,53 @@
-.languages-list
+.roleplay-momint-container
 {
-	margin-left: auto;
-	margin-right: auto;
-	width: 45%;
-	border: 2px solid black;
-	border-radius: 10px;
-	background-color: #202020;
-	padding-top: 4px;
-	color: #dddddd;
-	font-family: 'Consolas',monospace;
-	font-size: large;
+	background-color: white;
+	width: 300px;
+	height: 300px;
+	margin: 4px auto;
+	border-radius: 5%;
+	position: relative;
+	overflow: hidden;
+	opacity: 1.0;
+	font-size: 53%;
+	transition: width 1s, height 1s, font-size 1s;
 }
 
-.languages-list-heading
+.roleplay-momint-container:hover
 {
-	border-bottom: 2px solid grey ;
-	color: #dddddd;
-	padding-left: 10px;
-	padding-bottom: 4px;
+	width: 600px;
+	height: 600px;
+	font-size: 110%;
 }
 
-.language-card
+.roleplay-momint-bg
 {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	margin: 5px 10px;
-	border: 1px dotted white
+	width: 100%; 
+	height: 100%; 
+	position: absolute; 
+	left: 0;
+	top: 0;
+	opacity: 1;
+	transition: opacity 1s;
 }
 
-.language-card-image
+.roleplay-momint-bg:hover
 {
-	width: 15%;
-	height: 15%;
+	opacity: 0.66;
 }
 
-.language-card-text
+.roleplay-momint
 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-left: 10px;
-	padding-right: 5px;
+	color: #000;
+	position: relative;
+	padding: 45% 1%;
+	text-align: center;
 }
 
-.language-card-heading
+.quote
 {
-	color: #03b203;
-	margin-left: 0px;
-	padding-bottom: 4px;
+	font-size: 120%;
+	display: block;
+	font-style: oblique;
 	font-weight: bold;
+	padding: 3px;
 }
-
-.language-card-body
-{
-	color: #03dc03;
-	padding-bottom: 4px;
-	font-size: medium;
-	font-weight: lighter;
-	text-align: justify;
-}
-
