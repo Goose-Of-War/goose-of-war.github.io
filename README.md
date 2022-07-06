@@ -11,6 +11,7 @@ In the repository, you might be able to see some
 - (As a first step) listed all the content which I will be using in the [HTML file](index.html), mainly as text, (except for some instances where I have used CSS.)
 - Used CSS to style some basic elements (mainly to differentiate different components of the webpage.)
 - Used CSS to style a div and it's sub-classes which can be [found here](https://goose-of-war.github.io#languages-list). 
+- Used CSS transitions to make a Goose picture become a quote on hover.
 
 ### What's coming in the future?
 - Will add CSS styling for the other components of the portfolio as well

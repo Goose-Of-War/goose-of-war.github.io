@@ -2,14 +2,6 @@ body
 {
 	background-color: black;
 	margin: 0%;
-	font-size: large;
-}
-
-div
-{
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
 }
 
 header
@@ -37,12 +29,13 @@ main
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	font-family: sans-serif;
 	padding: 10px 20px;
 }
 
 hr
 {
-	margin: 4px 0px;
+	margin: 8px 0px;
 }
 
 h2
@@ -98,23 +91,25 @@ code
 
 .roleplay-momint-container
 {
-	background-color: white;
+	background-color: beige;
 	width: 300px;
 	height: 300px;
-	margin: 15px auto;
+	margin: 65px auto;
 	border-radius: 5%;
 	position: relative;
 	overflow: hidden;
 	opacity: 1.0;
-	font-size: 53%;
-	transition: width 1s, height 1s, font-size 1s;
+	font-size: 52%;
+	font-family: serif;
+	transition: width 1s, height 1s, font-size 1s, margin 1s;
 }
 
 .roleplay-momint-container:hover
 {
 	width: 400px;
 	height: 400px;
-	font-size: 69%;
+	font-size: 68%;
+	margin: 15px auto;
 }
 
 .roleplay-momint-bg
@@ -130,7 +125,7 @@ code
 
 .roleplay-momint-bg:hover
 {
-	opacity: 0.66;
+	opacity: 0.46;
 }
 
 .roleplay-momint
@@ -160,7 +155,6 @@ code
 	/* justify-content: flex-start; */
 	align-items: flex-start;
 	width: 75%;
-	border: 2px solid black;
 	border-radius: 10px;
 	background-color: #202020;
 	padding: 4px 0px;
@@ -172,12 +166,14 @@ code
 .languages-list-heading
 {
 	color: #dddddd;
-	padding-left: 10px;
 	margin-top: 2px;
+	margin-left: 0%;
+	width: 95%;
 	padding-bottom: 4px;
 	text-align: left;
-	margin-left: 15px;
+	padding-left: 5%;
 	font-family: 'Times New Roman', serif;
+	border-bottom: 2px solid white;
 }
 
 .language-card
@@ -191,7 +187,7 @@ code
 
 .language-card-image
 {
-	width: 10%;
+	max-width: 10%;
 	margin-left: 10px;
 	padding-right: 5px;
 }
