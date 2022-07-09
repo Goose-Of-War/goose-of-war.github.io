@@ -15,8 +15,9 @@ In the repository, there are two HTML files (**index.html** for the main webpage
 - Used CSS animation on the big **"Honk!"** you see on the top of the page.
 
 ### What's coming in the future?
-- Will add CSS styling for the other components of the portfolio as well
+- Will add some more CSS styling for the other components of the portfolio as well.
 - Will change the colour scheme, because- let's face it- it sucks as of now.
+- Will need to change header bar to have more stuff
 - Might add some new content (though this one was a bit of a doubt, but it seems like it will make its way back to the list.)
 
 #
