@@ -7,22 +7,17 @@ Hello. Goose here, working on my first Web repository: A portfolio. This portfol
 In the repository, there are two HTML files (**index.html** for the main webpage and **playgrounds.html** for testing purposes), two CSS files (one for each HTML file) and some images (in the folder `/icons`).  
 
 #
-### What have you done till now, Goose?
-- (As a first step) listed all the content which I will be using in the [HTML file](index.html), mainly as text, (except for some instances where I have used CSS.)
-- Used CSS to style some basic elements (mainly to differentiate different components of the webpage.)
-- Used CSS to style a div and it's sub-classes which can be [found here](https://goose-of-war.github.io#languages-list). 
-- Used CSS transitions to make a Goose picture become a quote on hover.
-- Used CSS animation on the big **"Honk!"** you see on the top of the page.
+### So... What have you got for us, Goose?
+For the most part, this repository contains only HTML and CSS. There are some animations, transitions, and some very elementary looking styling.
 
-### What's coming in the future?
-- Will add some more CSS styling for the other components of the portfolio as well.
-- Will change the colour scheme, because- let's face it- it sucks as of now.
-- Will need to change header bar to have more stuff
-- Might add some new content (though this one was a bit of a doubt, but it seems like it will make its way back to the list.)
+### And... is that it?
+I hope not. After 4 months of working on WebD, I can say this with certainty (I mean, I kinda did even back when I was making this.) The styling sucks. Not an ounce fo responsiveness, absurd color scheme, and the sheer lack of stuff which I could do with JS but haven't done is racking my brain (yes, blame it on [Part](https://github.com/PartMan7) for getting me into WebD and [Mokshith](https://github.com/mokshith25) for being good at front-end)
 
+I most certainly might be working on this repository (not as frequently as I want to) as this year (2022, if someone is reading this in, well, not 2022) comes to an end. Here's hoping for a new clean look as the new year comes.
 #
 Until later, then.
 
 Honk
 
-_This repository is being updated and may be a cause for discrepancies in the README file and the actual site. Please bear with it._
+#
+_For the most part, this repository was thought to be dead, but then again, the black magic brings the dead back to life (although it's not as lively as you want it to be)_
