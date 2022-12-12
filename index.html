@@ -5,6 +5,15 @@
 <head>
 	<title>Goose's Webpage</title>
 	<link rel="stylesheet" href="style.css">
+
+	<script>
+		// Convering header into sticky navbar
+		window.onscroll = () => {
+			const header = document.getElementsByTagName('header')[0];
+			if (window.pageYOffset > 0) header.classList.add('sticky');
+			else header.classList.remove('sticky');
+		}
+	</script>
 </head>
 
 <!--Head finished. Body next-->
@@ -13,7 +22,7 @@
 
 <header>
 	<div class = "sitename-span">
-		Goose's Webpage
+		Honk Zone
 	</div>
 </header>
 
@@ -23,8 +32,13 @@
 		<span class = "honk"></span><br>
 		<span class = "quote"> An intro by yours truly. </span>
 	</div>
-	
+	<br><br>
 	<!--Roleplay momint. Has a hover transition in it.-->
+	
+	<div class="normal-div"><div class="left-aligned-normal-div">
+		Honk to everyone here. I am Vidunram, but you can call me <strong>'Goose'</strong> (or a shortened form of my name.) As I mentioned before, I'm just a guy in glasses who does some simple stuff in a computer, be it a Discord bot or a small game. 
+	</div></div>
+
 	<div class="roleplay-momint-container">
 		<div class="roleplay-momint">
 			<span class = "quote">"If you don't have anything to lose, just honk like you dont care."</span>
@@ -34,9 +48,6 @@
 	</div>
 	<p>The goose bit seems a bit far-fetched, doesn't it? Well, that's what my character generally is. In reality, I'm just a guy in glasses who tries dumb stuff every now and then.</p><br>
 	
-	<div class="normal-div"><div class="left-aligned-normal-div">
-		Honk to everyone here. I am Vidunram, but you can call me <strong>'Goose'</strong> (or a shortened form of my name.) As I mentioned before, I'm just a guy in glasses who does some simple stuff in a computer, be it a Discord bot or a small game. 
-	</div></div>
 
 	<!--The first thing where I used CSS: Languages list.-->
 	<div class="languages-list" id="languages-list">
@@ -87,7 +98,7 @@
 	
 	<div class="projects-main">
 		<h2>Projects</h2>
-		<hr>
+		<hr width="100%">
 		<div class="projects-container">
 			<a href="https://github.com/Goose-Of-War/tkinter-minesweeper"><div class="project-card">
 				<img class="project-card-image" src="icons/ms.png" alt="Minesweeper">
