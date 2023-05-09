@@ -1,140 +1,115 @@
 <!DOCTYPE html>
+<html>
+	<head>
+		<title> Portfolio Website </title>
+		<link rel="stylesheet" href="style.css">
+		<script>
+			function setMainMargin () {
+				if (window.innerWidth < 600) return ;
+				document.querySelector('main').style.marginTop = getComputedStyle(document.querySelector('nav')).getPropertyValue('height');
+			}
 
-<!--Head part-->
+			function smoothScroll (id) {
+				document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+			}
 
-<head>
-	<title>Goose's Webpage</title>
-	<link rel="stylesheet" href="style.css">
+			function toggleSandwich () {
+				((element) => {
+					element.style.display = getComputedStyle(element).getPropertyValue('display') === 'none' ? 'flex' : 'none';
+					setMainMargin();
+				})(document.getElementById('sandwich-menu'));
+			}
 
-	<script>
-		// Convering header into sticky navbar
-		window.onscroll = () => {
-			const header = document.getElementsByTagName('header')[0];
-			if (window.pageYOffset > 0) header.classList.add('sticky');
-			else header.classList.remove('sticky');
-		}
-	</script>
-</head>
-
-<!--Head finished. Body next-->
-
-<body>
-
-<header>
-	<div class = "sitename-span">
-		Honk Zone
-	</div>
-</header>
-
-<main>
-	<!--Hover over this to find out something sweet.-->
-	<div class = "page-title">
-		<span class = "honk"></span><br>
-		<span class = "quote"> An intro by yours truly. </span>
-	</div>
-	<br><br>
-	<!--Roleplay momint. Has a hover transition in it.-->
+			window.addEventListener('load', setMainMargin);
+		</script>
+	</head>
 	
-	<div class="normal-div"><div class="left-aligned-normal-div">
-		Honk to everyone here. I am Vidunram, but you can call me <strong>'Goose'</strong> (or a shortened form of my name.) As I mentioned before, I'm just a guy in glasses who does some simple stuff in a computer, be it a Discord bot or a small game. 
-	</div></div>
-
-	<div class="roleplay-momint-container">
-		<div class="roleplay-momint">
-			<span class = "quote">"If you don't have anything to lose, just honk like you dont care."</span>
-			~ A goose who's been through so much war that peace is now not an option at all; maybe it never was...
-		</div>
-		<img class="roleplay-momint-bg" src="icons/goose.png" alt="Sir Goose of War">
-	</div>
-	<p>The goose bit seems a bit far-fetched, doesn't it? Well, that's what my character generally is. In reality, I'm just a guy in glasses who tries dumb stuff every now and then.</p><br>
-	
-
-	<!--The first thing where I used CSS: Languages list.-->
-	<div class="languages-list" id="languages-list">
-		<div class="languages-list-heading"> What languages do I know? </div>
-		<div class="language-card">
-			<img class="language-card-image" src="icons/py.png" alt="Py">
-			<div class="language-card-text">
-				<span class="language-card-heading">Python:</span>
-				<span class="language-card-body">Learning since 2019, Python would be what I would consider my comfort zone. Over the years, most of the things which I have done are in Python.</span>
+	<body>
+		<!-- Navbar -->
+		<nav>
+			<div id="navbar-main">
+				<button id="sandwich-menu-button" onclick="toggleSandwich()">
+					<div></div>
+					<div></div>
+					<div></div>
+				</button>
+				<div onclick="smoothScroll('home')" type="button"> Portfolio Website </div>
 			</div>
-		</div>
-		<div class="language-card">
-			<img class="language-card-image" src="icons/c.png" alt="C">
-			<div class="language-card-text">
-				<span class="language-card-heading">C:</span>
-				<span class="language-card-body">Thanks to the first-year programming course offered, I know a little bit about using C. <del>(Considering <strong>C++</strong> is just a badass extension of C, should I be including it in this list?)</del></span>
+			<div id="sandwich-menu">
+				<button class="sandwich-item" onclick="smoothScroll('about-me')" type="button"> About Me </button>
+				<button class="sandwich-item" onclick="smoothScroll('skills')" type="button"> My Skills </button>
+				<button class="sandwich-item" onclick="smoothScroll('projects')" type="button"> My Projects </button>
+				<button class="sandwich-item" onclick="smoothScroll('contact')" type="button"> Contact Me </button>
 			</div>
-		</div>
-		<div class="language-card">
-			<img class="language-card-image" src="icons/cs.png" alt="C#">
-			<div class="language-card-text">
-				<span class="language-card-heading">C#:</span>
-				<span class="language-card-body">This is among the few in this list which I am mentioning because I have a bare minimum knowledge of it. I learnt this for using Unity, which, needless to say, I haven't touched in a while now.</span>
+		</nav>
+		<!-- Main Page (with sections) -->
+		<main>
+			<!-- heading -->
+			<section id="home" style="background-color: var(--silver-gray);">
+				<h1><center> My Portfolio </center></h1>
+			</section>
+			<!-- Introduction about me -->
+			<section id="about-me" style="background-color: var(--sky-blue);">
+				<h2> About Me </h2>
+				<p>Hi. I'm Vidunram, a second-year undergraduate student in IIT Kharagpur. I am pursuing a degree in Electrical Enginnering but I work on quite a bit of code. I am from Chennai. I don't have hobbies, but I compensate them with a lot of occasional interests. </p>
+			</section>
+			<!-- Skills -->
+			<section id="skills" style="background-color: var(--lavender);">
+				<h2> Skills </h2>
+				<ul>
+					<li>
+						<h3> Computer Languages </h3>
+						<p> Most of my experience is in working with Python and Javascript. I have also worked on C, C# and PHP for really small periods of time. Except these, I am well-versed in HTML and CSS too. </p>
+					</li>
+					<li>
+						<h3> Frameworks and Libraries </h3>
+						<p> I have worked on a few libraries and frameworks over the past few years. Some of them include: </p>
+						<ul>
+							<li> ExpressJS </li>
+							<li> Django </li>
+							<li> Python Flask </li>
+							<li> Discord.js </li>
+							<li> Tkinter </li>
+							<li> Pygame </li>
+						</ul>
+					</li>
+					<li>
+						<h3> Other Technical Skills </h3>
+						<p> Outside these, I also have some experience with the following fields: </p>
+						<ul>
+							<li> HTTP Request Handling </li>
+							<li> API and Resource Processing </li>
+							<li> SQL and NoSQL Databases </li>
+							<li> Automation and Bash Scripts </li>
+							<li> Virtual Machines </li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<!-- Projects -->
+			<section id="projects" style="background-color: var(--silver-gray);">
+				<h2> Projects and Experience </h2>
+				<p> As of late, I have worked on small-scale Web Development projects, involving a framework in Python or Javascript and a database. My prior projects include small GUI games and Discord bots. To have a better look, please check out my GitHub profile. </p>
+			</section>
+		</main>
+		<!-- Footer -->
+		<footer id="contact">
+			<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
+				<div>
+					<h3> Find Me: </h3>
+					<ul>
+						<li> <a target="_blank" href="https://github.com/Goose-Of-War"> GitHub </a> </li>
+						<li> <a target="_blank" href="https://www.linkedin.com/in/vidunram-a-r/"> LinkedIn </a> </li>
+						<li> <a target="_blank" href="https://discord.gg/4z4CzmhQrF"> Discord </a> </li>
+					</ul>
+				</div>
+				<div>
+					<h3> Also Check Out: </h3>
+					<div>
+						<a target="_blank" href="https://kgpmask.club"> MASK </a
+					</div>
 			</div>
-		</div>
-		<div class="language-card">
-			<img class="language-card-image" src="icons/js.png" alt="JS">
-			<div class="language-card-text">
-				<span class="language-card-heading">JavaScript:</span>
-				<span class="language-card-body">I mean, it kind of makes sense considering Python is more back-end than front-end? Well, I haven't done squat using JS yet, so there's that.</span>
 			</div>
-		</div>
-		<div class="language-card">
-			<img class="language-card-image" src="icons/htmlcss.png" alt="HTML/CSS">
-			<div class="language-card-text">
-				<span class="language-card-heading">HTML|CSS:</span>
-				<span class="language-card-body">As you could've guessed, I suck at this as of now. I am slowly and steadily making progress (I hope?) Let's just hope it becomes good soon enough.</span>
-			</div>
-		</div>
-	</div>
-
-	
-	<div class="normal-div"><div class="right-aligned-normal-div">
-		<h2>What am I doing here?</h2>
-		This page is my way of learning to use HTML and CSS. I have not included any bit of JS or any other frameworks. Everything here is purely front-end. Also, this page sort of acts like a secondary intro page (after <a href="https://github.com/Goose-Of-War">my GitHub README</a>)
-	</div></div>
-
-	
-	<div class="projects-main">
-		<h2>Projects</h2>
-		<hr width="100%">
-		<div class="projects-container">
-			<a href="https://github.com/Goose-Of-War/tkinter-minesweeper"><div class="project-card">
-				<img class="project-card-image" src="icons/ms.png" alt="Minesweeper">
-				<hr>
-				<p class="project-card-text">Minesweeper in tkinter</p>
-			</div></a>
-			<a href="https://github.com/Goose-Of-War/quiz-bot"><div class="project-card">
-				<img class="project-card-image" src="icons/discord.png" alt="Discord Bot">
-				<hr>
-				<p class="project-card-text">A Discord Quiz Bot</p>
-			</div></a>
-			<a href="404"><div class="project-card">
-				<img class="project-card-image" src="icons/discord.png" alt="Discord Bot">
-				<hr>
-				<p class="project-card-text">A Discord Verification Bot</p>
-			</div></a>
-			<a href="https://pastebin.com/E6nquEuJ"><div class="project-card">
-				<img class="project-card-image" src="icons/pygame.png" alt="Mini Boss Game">
-				<hr>
-				<p class="project-card-text">A Mini Boss Game in PyGame</p>
-			</div></a>
-		</div>
-	</div>
-
-	<p>Shoutout to <a href="https://ashwinpra.github.io">Ashwin Prasanth</a> for suggesting me to get into this project. <br>
-	The progress in this webpage is slowly increasing(?) Until then<br>
-	Honk </p>
-	
-</main>
-
-<footer>
-	A management under the divine church of St. Honk Gooseling.
-</footer>
-
-</body>
-
-<!--Body has come to an end as well.-->
-
+		</footer>
+	</body>
 </html>
