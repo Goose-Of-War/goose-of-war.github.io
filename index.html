@@ -22,6 +22,52 @@
 
 			window.addEventListener('load', setMainMargin);
 		</script>
+		<!-- Slideshow JS -->
+		<script>
+			let timeToChange = 5_000;
+
+			function nextSlide (parentElement) {
+				let activeSlide;
+				do {
+					activeSlide = parentElement.firstChild
+					parentElement.removeChild(activeSlide);
+					parentElement.append(activeSlide);
+				} while (activeSlide.nodeName !== 'DIV');
+				timeToChange = 5_000;
+			}
+
+			function previousSlide (parentElement) {
+				let lastSlide;
+				do {
+					lastSlide = parentElement.lastChild
+					parentElement.removeChild(lastSlide);
+					parentElement.prepend(lastSlide);
+				} while (lastSlide.nodeName !== 'DIV');
+				timeToChange = 5_000;
+			}
+
+			
+
+			window.addEventListener('load', () => {
+				document.querySelector('#previousSlideButton').addEventListener(
+					'click', () => previousSlide(document.querySelector('.slideshow-objects-container'))
+				);
+				document.querySelector('#nextSlideButton').addEventListener(
+					'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
+				);
+
+				function checkForSlideChange () {
+					timeToChange -= 25;
+					if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
+					setTimeout(checkForSlideChange, 25);
+				}
+
+				checkForSlideChange();
+
+			})
+
+
+		</script>
 	</head>
 	
 	<body>
@@ -90,6 +136,25 @@
 			<section id="projects" style="background-color: var(--silver-gray);">
 				<h2> Projects and Experience </h2>
 				<p> As of late, I have worked on small-scale Web Development projects, involving a framework in Python or Javascript and a database. My prior projects include small GUI games and Discord bots. To have a better look, please check out my GitHub profile. </p>
+
+				<div class="slideshow">
+					<button id="previousSlideButton"> < </button>
+					<div class="slideshow-objects-container">
+						<div class="slideshow-object" style="background-color: var(--sky-blue);">
+							<h3> Website Backend </h3>
+							<div> Primarily the <a href="https://kgpmask.club">MASK Website</a>, I have also worked on some other servers too. </div>
+						</div>
+						<div class="slideshow-object" style="background-color: var(--lavender);">
+							<h3> Discord Bots </h3>
+							<div> Using both the Python and JS API libraries for Discord bots, I have made somewhat functional bots for small purposes. </div>
+						</div>
+						<div class="slideshow-object" style="background-color: var(--red);">
+							<h3> Games </h3>
+							<div> I have made some small games like Minesweeper and Ludo </div>
+						</div>
+					</div>
+					<button id="nextSlideButton"> > </button>
+				</div>
 			</section>
 		</main>
 		<!-- Footer -->
