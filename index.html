@@ -48,23 +48,23 @@
 
 			
 
-			window.addEventListener('load', () => {
-				document.querySelector('#previousSlideButton').addEventListener(
-					'click', () => previousSlide(document.querySelector('.slideshow-objects-container'))
-				);
-				document.querySelector('#nextSlideButton').addEventListener(
-					'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
-				);
+			// window.addEventListener('load', () => {
+			// 	document.querySelector('#previousSlideButton').addEventListener(
+			// 		'click', () => previousSlide(document.querySelector('.slideshow-objects-container'))
+			// 	);
+			// 	document.querySelector('#nextSlideButton').addEventListener(
+			// 		'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
+			// 	);
 
-				function checkForSlideChange () {
-					timeToChange -= 25;
-					if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
-					setTimeout(checkForSlideChange, 25);
-				}
+			// 	function checkForSlideChange () {
+			// 		timeToChange -= 25;
+			// 		if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
+			// 		setTimeout(checkForSlideChange, 25);
+			// 	}
 
-				checkForSlideChange();
+			// 	checkForSlideChange();
 
-			})
+			// })
 
 
 		</script>
@@ -91,16 +91,16 @@
 		<!-- Main Page (with sections) -->
 		<main>
 			<!-- heading -->
-			<section id="home" style="background-color: var(--silver-gray);">
+			<section id="home">
 				<h1><center> My Portfolio </center></h1>
 			</section>
 			<!-- Introduction about me -->
-			<section id="about-me" style="background-color: var(--sky-blue);">
+			<section id="about-me">
 				<h2> About Me </h2>
-				<p>Hi. I'm Vidunram, a second-year undergraduate student in IIT Kharagpur. I am pursuing a degree in Electrical Enginnering but I work on quite a bit of code. I am from Chennai. I don't have hobbies, but I compensate them with a lot of occasional interests. </p>
+				<p>Hello. I'm Vidunram, a third-year undergraduate student in IIT Kharagpur. I am pursuing a degree in Electrical Enginnering but I work on quite a bit of code. I am from Chennai. I don't have hobbies, but I compensate them with a lot of occasional interests. </p>
 			</section>
 			<!-- Skills -->
-			<section id="skills" style="background-color: var(--lavender);">
+			<section id="skills">
 				<h2> Skills </h2>
 				<ul>
 					<li>
@@ -133,27 +133,27 @@
 				</ul>
 			</section>
 			<!-- Projects -->
-			<section id="projects" style="background-color: var(--silver-gray);">
+			<section id="projects">
 				<h2> Projects and Experience </h2>
 				<p> As of late, I have worked on small-scale Web Development projects, involving a framework in Python or Javascript and a database. My prior projects include small GUI games and Discord bots. To have a better look, please check out my GitHub profile. </p>
 
 				<div class="slideshow">
-					<button id="previousSlideButton"> < </button>
+					<button id="previousSlideButton"> &#x2190; </button>
 					<div class="slideshow-objects-container">
-						<div class="slideshow-object" style="background-color: var(--sky-blue);">
+						<div class="slideshow-object">
 							<h3> Website Backend </h3>
 							<div> Primarily the <a href="https://kgpmask.club">MASK Website</a>, I have also worked on some other servers too. </div>
 						</div>
-						<div class="slideshow-object" style="background-color: var(--lavender);">
+						<div class="slideshow-object">
 							<h3> Discord Bots </h3>
 							<div> Using both the Python and JS API libraries for Discord bots, I have made somewhat functional bots for small purposes. </div>
 						</div>
-						<div class="slideshow-object" style="background-color: var(--red);">
+						<div class="slideshow-object">
 							<h3> Games </h3>
 							<div> I have made some small games like Minesweeper and Ludo </div>
 						</div>
 					</div>
-					<button id="nextSlideButton"> > </button>
+					<button id="nextSlideButton"> &#x2192; </button>
 				</div>
 			</section>
 		</main>
@@ -171,7 +171,7 @@
 				<div>
 					<h3> Also Check Out: </h3>
 					<div>
-						<a target="_blank" href="https://kgpmask.club"> MASK </a
+						<a target="_blank" href="https://kgpmask.club"> MASK </a>
 					</div>
 			</div>
 			</div>
