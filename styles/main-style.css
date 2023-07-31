@@ -1,0 +1,53 @@
+:root {
+	--pitch-black: #000000;
+	--black: #1d1d1d;
+	--light-black: #282828;
+
+	--darker-gray: #484848;
+	--dark-gray: #626262;
+	--gray: #808080;
+	--light-gray: #969696;
+	--lighter-gray: #aeaeae;
+
+	--off-white: #cfcfcf;
+	--white: #ededed;
+	--blinding-white: #ffffff;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+
+	font-size: 1.06em;
+	color: var(--black);
+	background-color: var(--black);
+}
+
+main {
+	font-size: 18px;
+	width: 80%;
+	margin: auto;
+	background-color: var(--white);
+}
+
+section {
+	/* border: solid 1px var(--dark); */
+	padding: 10px 10vw;
+	border-bottom: solid 5px var(--black);
+}
+
+footer {
+	margin: 0px;
+	padding: 5px 25px;
+
+	background-color: var(--light-black); 
+	color: var(--off-white);
+}
+
+footer > div > div {
+	width: 300px;
+}
+
+footer a, footer a:active {
+	color: var(--link);
+}

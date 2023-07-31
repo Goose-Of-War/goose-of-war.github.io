@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<title> Portfolio Website </title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="styles/main-style.css">
+		<link rel="stylesheet" href="styles/navbar.css">
+		<link rel="stylesheet" href="styles/slideshow.css">
+		<link rel="stylesheet" href="styles/600-px-width.css">
 		<script>
 			function setMainMargin () {
 				if (window.innerWidth < 600) return ;
@@ -10,7 +13,8 @@
 			}
 
 			function smoothScroll (id) {
-				document.getElementById(id).scrollIntoView({ behavior: 'smooth' })
+				document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+				if (getComputedStyle(document.getElementById('sandwich-menu-button')).getPropertyValue('display') !== 'none') toggleSandwich();
 			}
 
 			function toggleSandwich () {
@@ -48,23 +52,23 @@
 
 			
 
-			// window.addEventListener('load', () => {
-			// 	document.querySelector('#previousSlideButton').addEventListener(
-			// 		'click', () => previousSlide(document.querySelector('.slideshow-objects-container'))
-			// 	);
-			// 	document.querySelector('#nextSlideButton').addEventListener(
-			// 		'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
-			// 	);
+			window.addEventListener('load', () => {
+				document.querySelector('#previousSlideButton').addEventListener(
+					'click', () => previousSlide(document.querySelector('.slideshow-objects-container'))
+				);
+				document.querySelector('#nextSlideButton').addEventListener(
+					'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
+				);
 
-			// 	function checkForSlideChange () {
-			// 		timeToChange -= 25;
-			// 		if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
-			// 		setTimeout(checkForSlideChange, 25);
-			// 	}
+				function checkForSlideChange () {
+					timeToChange -= 25;
+					if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
+					setTimeout(checkForSlideChange, 25);
+				}
 
-			// 	checkForSlideChange();
+				checkForSlideChange();
 
-			// })
+			})
 
 
 		</script>
@@ -170,9 +174,9 @@
 				</div>
 				<div>
 					<h3> Also Check Out: </h3>
-					<div>
-						<a target="_blank" href="https://kgpmask.club"> MASK </a>
-					</div>
+					<ul>
+						<li><a target="_blank" href="https://kgpmask.club"> MASK </a></li>
+					</ul>
 			</div>
 			</div>
 		</footer>
