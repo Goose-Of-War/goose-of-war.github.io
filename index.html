@@ -60,13 +60,10 @@
 					'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
 				);
 
-				function checkForSlideChange () {
+				setInterval(function () {
 					timeToChange -= 25;
 					if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
-					setTimeout(checkForSlideChange, 25);
-				}
-
-				checkForSlideChange();
+				}, 25);
 
 			})
 

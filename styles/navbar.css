@@ -24,9 +24,9 @@ nav > div {
 }
 
 nav > div > * {
-	color: var(--light-gray);
-	height: calc(100% - 20px);
-	padding: 10px;
+	color: var(--red);
+	height: calc(100% - 40px) 10px;
+	padding: 20px;
 }
 
 #navbar-main  {
@@ -46,10 +46,10 @@ nav > div > * {
 	background-color: inherit;
 	font-family: inherit;
 	font-size: inherit;
-	transition: background-color 0.3s, color 0.3s;
+	transition: 0.3s;
 }
 
 .sandwich-item:hover {
 	background-color: var(--black);
-	color: var(--off-white);
+	color: var(--lighter-red);
 }

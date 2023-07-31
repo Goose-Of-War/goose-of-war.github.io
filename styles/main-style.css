@@ -12,6 +12,12 @@
 	--off-white: #cfcfcf;
 	--white: #ededed;
 	--blinding-white: #ffffff;
+
+	--darker-red: #5f0000;
+	--dark-red: #9b0303;
+	--red: #e00000;
+	--light-red: #e84040;
+	--lighter-red: #ff6e6e;
 }
 
 body {
@@ -20,7 +26,7 @@ body {
 
 	font-size: 1.06em;
 	color: var(--black);
-	background-color: var(--black);
+	background-color: var(--pitch-black);
 }
 
 main {
@@ -32,8 +38,15 @@ main {
 
 section {
 	/* border: solid 1px var(--dark); */
-	padding: 10px 10vw;
-	border-bottom: solid 5px var(--black);
+	width: 70%;
+	margin: auto;
+	padding: 10px 5%;
+
+	border-bottom: solid 2px var(--black);
+}
+
+#projects { /* last section */
+	border-bottom: 0px;
 }
 
 footer {
@@ -48,6 +61,15 @@ footer > div > div {
 	width: 300px;
 }
 
+footer h3 {
+	color: var(--red);
+}
+
 footer a, footer a:active {
 	color: var(--link);
+	transition: 0.3s;
+}
+
+footer a:hover, footer a:focus {
+	color: var(--light-red);
 }
