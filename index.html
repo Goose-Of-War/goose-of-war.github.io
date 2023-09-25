@@ -1,181 +1,122 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title> Portfolio Website </title>
-		<link rel="stylesheet" href="styles/main-style.css">
-		<link rel="stylesheet" href="styles/navbar.css">
-		<link rel="stylesheet" href="styles/slideshow.css">
-		<link rel="stylesheet" href="styles/600-px-width.css">
-		<script>
-			function setMainMargin () {
-				if (window.innerWidth < 600) return ;
-				document.querySelector('main').style.marginTop = getComputedStyle(document.querySelector('nav')).getPropertyValue('height');
-			}
 
-			function smoothScroll (id) {
-				document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-				if (getComputedStyle(document.getElementById('sandwich-menu-button')).getPropertyValue('display') !== 'none') toggleSandwich();
-			}
+<!--Head part-->
 
-			function toggleSandwich () {
-				((element) => {
-					element.style.display = getComputedStyle(element).getPropertyValue('display') === 'none' ? 'flex' : 'none';
-					setMainMargin();
-				})(document.getElementById('sandwich-menu'));
-			}
-
-			window.addEventListener('load', setMainMargin);
-		</script>
-		<!-- Slideshow JS -->
-		<script>
-			let timeToChange = 5_000;
-
-			function nextSlide (parentElement) {
-				let activeSlide;
-				do {
-					activeSlide = parentElement.firstChild
-					parentElement.removeChild(activeSlide);
-					parentElement.append(activeSlide);
-				} while (activeSlide.nodeName !== 'DIV');
-				timeToChange = 5_000;
-			}
-
-			function previousSlide (parentElement) {
-				let lastSlide;
-				do {
-					lastSlide = parentElement.lastChild
-					parentElement.removeChild(lastSlide);
-					parentElement.prepend(lastSlide);
-				} while (lastSlide.nodeName !== 'DIV');
-				timeToChange = 5_000;
-			}
-
-			
-
-			window.addEventListener('load', () => {
-				document.querySelector('#previousSlideButton').addEventListener(
-					'click', () => previousSlide(document.querySelector('.slideshow-objects-container'))
-				);
-				document.querySelector('#nextSlideButton').addEventListener(
-					'click', () => nextSlide(document.querySelector('.slideshow-objects-container'))
-				);
-
-				setInterval(function () {
-					timeToChange -= 25;
-					if (timeToChange < 0) nextSlide(document.querySelector('.slideshow-objects-container'));
-				}, 25);
-
-			})
-
-
-		</script>
-	</head>
+<head>
+	<title>Goose's Webpage</title>
+	<link rel="stylesheet" href="style.css">
 	
-	<body>
-		<!-- Navbar -->
-		<nav>
-			<div id="navbar-main">
-				<button id="sandwich-menu-button" onclick="toggleSandwich()">
-					<div></div>
-					<div></div>
-					<div></div>
-				</button>
-				<div onclick="smoothScroll('home')" type="button"> Portfolio Website </div>
-			</div>
-			<div id="sandwich-menu">
-				<button class="sandwich-item" onclick="smoothScroll('about-me')" type="button"> About Me </button>
-				<button class="sandwich-item" onclick="smoothScroll('skills')" type="button"> My Skills </button>
-				<button class="sandwich-item" onclick="smoothScroll('projects')" type="button"> My Projects </button>
-				<button class="sandwich-item" onclick="smoothScroll('contact')" type="button"> Contact Me </button>
-			</div>
-		</nav>
-		<!-- Main Page (with sections) -->
-		<main>
-			<!-- heading -->
-			<section id="home">
-				<h1><center> My Portfolio </center></h1>
-			</section>
-			<!-- Introduction about me -->
-			<section id="about-me">
-				<h2> About Me </h2>
-				<p>Hello. I'm Vidunram, a third-year undergraduate student in IIT Kharagpur. I am pursuing a degree in Electrical Enginnering but I work on quite a bit of code. I am from Chennai. I don't have hobbies, but I compensate them with a lot of occasional interests. </p>
-			</section>
-			<!-- Skills -->
-			<section id="skills">
-				<h2> Skills </h2>
-				<ul>
-					<li>
-						<h3> Computer Languages </h3>
-						<p> Most of my experience is in working with Python and Javascript. I have also worked on C, C# and PHP for really small periods of time. Except these, I am well-versed in HTML and CSS too. </p>
-					</li>
-					<li>
-						<h3> Frameworks and Libraries </h3>
-						<p> I have worked on a few libraries and frameworks over the past few years. Some of them include: </p>
-						<ul>
-							<li> ExpressJS </li>
-							<li> Django </li>
-							<li> Python Flask </li>
-							<li> Discord.js </li>
-							<li> Tkinter </li>
-							<li> Pygame </li>
-						</ul>
-					</li>
-					<li>
-						<h3> Other Technical Skills </h3>
-						<p> Outside these, I also have some experience with the following fields: </p>
-						<ul>
-							<li> HTTP Request Handling </li>
-							<li> API and Resource Processing </li>
-							<li> SQL and NoSQL Databases </li>
-							<li> Automation and Bash Scripts </li>
-							<li> Virtual Machines </li>
-						</ul>
-					</li>
-				</ul>
-			</section>
-			<!-- Projects -->
-			<section id="projects">
-				<h2> Projects and Experience </h2>
-				<p> As of late, I have worked on small-scale Web Development projects, involving a framework in Python or Javascript and a database. My prior projects include small GUI games and Discord bots. To have a better look, please check out my GitHub profile. </p>
+	<script>
+		let selected;
 
-				<div class="slideshow">
-					<button id="previousSlideButton"> &#x2190; </button>
-					<div class="slideshow-objects-container">
-						<div class="slideshow-object">
-							<h3> Website Backend </h3>
-							<div> Primarily the <a href="https://kgpmask.club">MASK Website</a>, I have also worked on some other servers too. </div>
-						</div>
-						<div class="slideshow-object">
-							<h3> Discord Bots </h3>
-							<div> Using both the Python and JS API libraries for Discord bots, I have made somewhat functional bots for small purposes. </div>
-						</div>
-						<div class="slideshow-object">
-							<h3> Games </h3>
-							<div> I have made some small games like Minesweeper and Ludo </div>
-						</div>
-					</div>
-					<button id="nextSlideButton"> &#x2192; </button>
-				</div>
-			</section>
-		</main>
-		<!-- Footer -->
-		<footer id="contact">
-			<div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
-				<div>
-					<h3> Find Me: </h3>
-					<ul>
-						<li> <a target="_blank" href="https://github.com/Goose-Of-War"> GitHub </a> </li>
-						<li> <a target="_blank" href="https://www.linkedin.com/in/vidunram-a-r/"> LinkedIn </a> </li>
-						<li> <a target="_blank" href="https://discord.gg/4z4CzmhQrF"> Discord </a> </li>
-					</ul>
-				</div>
-				<div>
-					<h3> Also Check Out: </h3>
-					<ul>
-						<li><a target="_blank" href="https://kgpmask.club"> MASK </a></li>
-					</ul>
+		const categoryInfo = {
+			progLang: ['JavaScript', 'Python', 'MATLAB', 'C/C++', 'Rust', 'C#', 'Assembly'],
+			libFrame: ['ExpressJS', 'ReactJS', 'Django', 'Flask', 'discord.js', 'discord.py'],
+			techSkil: ['HTTP Request Handling', 'Version Control', 'Database Integration', 'API Handling', 'CI/CD', 'Automation Scripting'],
+			coursWrk: ['Programming and Data Scructures', 'Theory of Operating Systems', 'Fundamentals of Embedded Control and Software', 'Digital Signal Processing', 'Digital Electronic Circuits', 'Analog Electronic Circuits'],
+			fieldInt: ['Software Development', 'Software Optimization', 'Embedded Systems', 'Electronic Circuit Design', 'Digital Art']
+		}
+
+		const showDetails = (key) => {
+			if (selected) document.getElementById(selected).classList.toggle('selected');
+			if (selected === key) return (selected = undefined);
+			document.getElementById(selected = key).classList.toggle('selected');
+			document.querySelector('#category-info').innerHTML = '<ul><li>' + categoryInfo[key].join('</li><li>') + '</li></ul>';
+		}
+
+		window.addEventListener('load', () => {
+
+			[...document.querySelectorAll('navbar a')].forEach(a => a.onclick = (event) => {
+				event.preventDefault();
+				window.scrollTo(0, Math.max(
+					document.querySelector(`#${event.target.href.split('#')[1]}`).offsetTop 
+					- (a => 
+						['height', 'padding-top', 'padding-bottom'].map(i => ~~a.getPropertyValue(i).slice(0, -2)).reduce((c, b) => c + b)
+					)(getComputedStyle(document.querySelector('navbar')))
+					- 30, 0));
+			});
+		});
+	</script>
+</head>
+
+<!--Head finished. Body next-->
+
+<body>
+
+<header>
+	<navbar>
+		<div>
+			<a href="#vidunram-a-r"> Vidunram A R </a>
+		</div>
+
+		<div>
+			<a href="#about-me"> About Me </a>
+			<a href="#skills"> Skills </a>
+			<a href="#projects"> Projects </a>
+			<a href="#contact"> Contact </a>
+		</div>
+	</navbar>
+</header>
+
+<main>
+	<section id="vidunram-a-r">
+		<div id="filler-rect"></div>
+		<div class="content">
+			<div class="text-content">
+				<span style="font-size: 1.6em;"> Hello. I am </span>
+				<br>
+				<span style="font-size: 3.6em;"> Vidunram A R </span>
+			</div>
+			<div class="image-container">
+				<img src="assets/vidunram.webp" alt="Vidunram A R">
+			</div>
+		</div>
+	</section>
+
+	<section id="about-me">
+		<h1> About Me </h1>
+		<div class="content">
+			<div class="image-container">
+				<img src="assets/goos.webp" alt="Goose">
+				<p> My friends call me "Goose" </p>
+			</div>
+			<div class="text-content">
+				<p>I am a third-year undergraduate student at IIT Kharagpur pursuing a Dual Degree in Electrical Engineering. </p>
+				<p>I am a web developer, with my main focus on the backend despite making full fledged websites. I also work on small programs and projects. </p>
+				<p>While I do not have any specific hobbies, I have a ton of occasional interests which I tend to pick and drop every now and then. </p>
+				<p>I am interested in developing software in general, control systems, electronic circuits and learning new things. </p>
 			</div>
 			</div>
-		</footer>
-	</body>
+	</section>
+	
+	<section id="skills">
+		<h1> Skills and Knowledge </h1>
+		<div class="content">
+			<div id="category-list">
+				<button class="category" id='progLang' onclick="showDetails('progLang')"> Programming Languages </button>
+				<button class="category" id='libFrame' onclick="showDetails('libFrame')"> Libraries and Frameworks </button>
+				<button class="category" id='techSkil' onclick="showDetails('techSkil')"> Technical Skills </button>
+				<button class="category" id='coursWrk' onclick="showDetails('coursWrk')"> Coursework </button>
+				<button class="category" id='fieldInt' onclick="showDetails('fieldInt')"> Fields of Interest </button>
+			</div>
+			<div id="category-info"></div>
+		</div>
+	</section>
+
+	<section id="projects">
+		<h1> Projects </h1>
+		<div class="content">
+			
+		</div>
+	</section>
+</main>
+
+<!-- <footer>
+	A management under the divine church of St. Honk Gooseling.
+</footer> -->
+
+</body>
+
+<!--Body has come to an end as well.-->
+
 </html>
