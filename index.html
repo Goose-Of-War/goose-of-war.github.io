@@ -25,7 +25,6 @@
 		}
 
 		window.addEventListener('load', () => {
-
 			[...document.querySelectorAll('navbar a')].forEach(a => a.onclick = (event) => {
 				event.preventDefault();
 				window.scrollTo(0, Math.max(
@@ -36,6 +35,43 @@
 					- 30, 0));
 			});
 		});
+	</script>
+	<script>
+		function descSort(arr) {
+			return arr.sort(function(a, b) {
+				return a[0] < b[0] ? 1 : -1;
+			});
+		}
+		
+		function findCurrentPage () {
+			const pagesContainer = document.querySelector('#projects .container');
+			const pages = [...pagesContainer.children];
+			const offsetLeft = pagesContainer.scrollLeft;
+			let pageArr = pages.map((page, i) => [Math.abs(page.offsetLeft - offsetLeft), i]);
+			// console.log([...descSort(pageArr)]);
+			return descSort(pageArr).pop().pop();
+		}
+
+		function scrollToPage (n) {
+			if (n === '') return;
+			const pagesContainer = document.querySelector('#projects .container');
+			const pages = document.querySelectorAll('#projects .container .card');
+			if (!pages[~~n]) scrollToPage(~~n < 0 ? 0 : pages.length - 1);
+			pagesContainer.scrollTo(pages[~~n].offsetLeft, 0);
+		}
+
+		function nextPage () {
+			const pages = document.querySelectorAll('#projects .container .card');
+			const currentPage = findCurrentPage();
+			scrollToPage( Math.min(currentPage + 1, pages.length - 1) );
+		}
+
+		function prevPage () {
+			const currentPage = findCurrentPage();
+			scrollToPage( Math.max(currentPage - 1, 0) );
+		}
+
+		window.addEventListener('load', () => scrollToPage(0));
 	</script>
 </head>
 
@@ -106,14 +142,56 @@
 	<section id="projects">
 		<h1> Projects </h1>
 		<div class="content">
-			
+			<div class="container">
+				<div class="card">
+					<div class="content">
+						<h2 class="heading"> MASK Website </h3>
+						<p class="body"> The website of Manga & Anime Society Kharagpur, features the society's content like art and AMVs, while also containing some interactive content such as newsletter quizzes and polls. </p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="content">
+						<h2 class="heading"> Live Quiz Portal </h3>
+						<p class="body"> A live quiz portal with real-time response and low latency, capable of handling upto 300 participants with minimal losses. Developed from scratch using a minimalistic stack, it relies on self code, from authentication to functioning </p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="content">
+						<h2 class="heading"> "Clueless" Discord Bot </h3>
+						<p class="body"> A Discord bot which acts as a way for me to learn, test and implement Discord.js techniques and embeds. Also serves as my go-to guy for automating some Discord grunt work. </p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="content">
+						<h2 class="heading"> Minesweeper using Tkinter </h2>
+						<p class="body"> Remaking the classic Minesweeper game in Python using the tkinter library. The game offers 3 difficulties, 4 colour themes in a rather minimal application. </p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="content">
+						<h2 class="heading"> Discord Quiz-Bot </h2>
+						<p class="body"> A quiz bot using discord.py. Slightly outdated for current use, but served as a wonderful bot for running a Discord quiz among multiple people. Supported text and images for upto 10 people with bearable latency. </p>
+					</div>
+				</div>
+				<div class="card">
+					<div class="content">
+						<h2 class="heading"> Pothole Alert using GPS </h2>
+						<p class="body"> An Arduino project for vehicles. It uses a Neo6M chip for GPS and is configured to alert a vehicle when it is moving too fast towards a pothole. </p>
+					</div>
+				</div>
+			</div>
+			<div class="control">
+				<button class="control-button" onclick="prevPage()"> &#x2190; </button>
+				<div class="shadow"></div>
+				<button class="control-button" onclick="nextPage()"> &#x2192; </button>
+			</div>
 		</div>
 	</section>
 </main>
 
-<!-- <footer>
+<footer id="contact">
 	A management under the divine church of St. Honk Gooseling.
-</footer> -->
+</footer>
 
 </body>
 
